@@ -1,0 +1,65 @@
+Network Devices: Computer networks can also include multiple devices/mediums which help in the communication between two different devices; these are known as Network devices and include things such as NIC, modem, hub, switches, routers, and bridges. 
+NIC: Stands for Network Interface Card. This is also known as network adapter card, Ethernet Card and LAN card.
+Modem: It is a device that enables a computer to send or receive data over telephone or cable lines that combination of two devices modulator and demodulator.
+Repeater: It is signal regenerate device that is used in between 2 network devices in same network. It operates at the physical layer.
+Hub: it is centralized device that connects multiple devices in a single LAN network
+Switch: It is network device that connects other devices to Ethernet networks through twisted pair cables. That uses packet switching technique to receive, store and forward data packets on the network. It maintains a list of network addresses of all the devices connected to it.
+Bridge: Bridge is used to divide a large network into smaller segments,
+Breaking a large network into smaller segments,	
+Connecting different media types. Such as connects UTP with the fiber optic, 
+Connecting different network architectures. Such as connects Ethernet with the Token ring.
+Router: it is a device like a switch that routes data packets based on their IP addresses. Router is mainly a Network Layer device and connect LANs and WANs together.
+A router reads its routing table to decide the best available route the packet can take to reach its destination quickly and accurately.
+Brouter: bridging router is a device which combines features of both bridge and router. It can work either at data link layer or at network layer.
+Gateways: it is a network device used to connect two or more networks having different protocols.
+
+OSI model (Open Systems Interconnection): It is developed by International Organization for Standardization or ISO, the Open Systems Interconnection model or OSI model is a critical building block in networking. 
+Information technology (IT) networking professionals use OSI model to understand the concept, how data is sent or received over a network.
+There are 7 layers in the OSI Model and each layer has its specific role in handling data. All the layers are mentioned below
+7. Application Layer: The application Layer is the topmost layer of the OSI Model, where the user interacts with the system using an application.
+6. Presentation Layer: The presentation Layer has the work of encrypting and decryption data, and converting it to such form that can be accessed by Application Layer.
+5. Session Layer: The Session Layer works in the establishment, termination, and management sessions.
+4. Transport Layer: The transport layer is responsible for message delivery across the points covered in the path to the destination.
+3. Network Layer: The Network Layer is responsible for data transmission from one host to another located in multiple networks.
+2. Data Link Layer: DLL works for the node-to-node delivery of the message.
+1. Physical Layer: Physical layer is the lowest layer in the OSI Model. This layer works on establishing actual physical connections among devices.
+
+Layers	Working	Protocol Data Unit	Protocols
+1 – Physical Layer	Establishing Physical Connections between Devices.	Bits	USB, SONET/SDH
+2 –Data Link Layer	Node to Node Delivery of Message.	Frames	Ethernet, PPP
+
+3 – Network Layer	Transmission of data from one host to another, located in different networks.	Packets	IP, ICMP, IGMP, OSPF
+4–Transport Layer	Take Service from Network Layer and provide it to the Application Layer.	Segments (TCP), Datagrams (UDP)	TCP, UDP, SCTP
+5 – Session Layer	Establishes Connection, Maintenance, Ensures Authentication and Ensures security.	Data	NetBIOS, RPC, PPTP
+6–Presentation Layer	Data from the application layer is extracted and manipulated in the required format for transmission.	Data	TLS/SSL, MIME, JPEG, PNG, ASCII
+7– Application Layer	Helps in identifying the client and synchronizing communication.	Data	FTP, SMTP, DNS, DHCP
+
+Q:2. What are common protocols and their associated ports in DevOps?
+Ans. Protocol is a set of rules and standards that manage how data is transmitted over a network. Like. tcp/ip, https and ftp.
+1.	SSH (Secure Shell) Port 22: SSH is used for secure remote access to the server. It is required to manage servers, deploy code, and perform various administrative tasks.
+2.	HTTP (Port 80): HTTP is the primary protocol used to transfer data over the Web. Port 80 is the default port for HTTP traffic.
+3.	HTTPS (Port 443): HTTPS encrypts HTTP traffic for secure communications over the Internet. Port 443 is the default port for HTTPS.
+4.	FTP (File Transfer Protocol) Port 21: FTP is used to transfer files between a client and a server over a network. Port 21 is the default port for FTP control.
+5.	SMTP (Simple Mail Transfer Protocol) Port 25: SMTP is used to send email messages between servers. Port 25 is the default port for SMTP.
+6.	DNS (Domain Name System) Port 53: DNS is responsible for translating domain names into IP addresses. Port 53 is used for DNS queries.
+7.	MySQL (Port 3306): MySQL is a popular relational database management system. Port 3306 is the default port for MySQL connections.
+
+Hands-On with Networking Commands: Practice essential networking commands.
+PING stands for Packet InterNet Groper: It's a network utility that sends an echo request message using the Internet Control Message Protocol (ICMP). It's used to test connectivity and troubleshoot network problems. 
+$ ping google.com
+Traceroute / tracert (trace packet routes): It is a network diagnostic tool used to track in real-time the pathway taken by a packet on an IP network from source to destination, "Traceroute" is the command used on Linux and macOS systems, while "tracert" is the equivalent command used on Windows systems.
+$ traceroute google.com
+Netstat (network statistics): it is a networking tool that displays network status and statistics. It can be used for troubleshooting, configuration, and monitoring network connections.
+$ netstat -ano | grep ":22"
+cURL, which stands for client URL (HTTP requests): It is a command line tool that developers use to transfer data to and from a server.
+$ curl https://example.com
+Nslookup (DNS lookup): It is a command-line tool that allows users to query a Domain Name System (DNS) server. It's used to find information about domain names, IP addresses, and DNS records. 
+$ nslookup google.com
+Dig stands for Domain Information Groper: It is a network administration command-line tool for querying the Domain Name System (DNS). it is useful for network troubleshooting.
+$ dig google.com
+Address Resolution Protocol (ARP): It is a network protocol that translates IP addresses into MAC addresses. This allows devices on a local area network (LAN) to communicate with each other.
+$ arp -a 
+Tracepath: It is a network diagnostic tool, primarily used in Linux systems, that allows you to trace the route taken by packets from your computer to a specified destination.
+$ tracepath www.google.com
+Nmap, or Network Mapper: It is a free, open-source tool that scans networks for security vulnerabilities. It's used by security professionals and network administrators.
+$ nmap --top-ports 22 google.com
