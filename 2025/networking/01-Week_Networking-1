@@ -1,1 +1,25 @@
+01-Week: Challenge of DevOps-90-Dsys-Jan2025
+Networking Administration
+A computer network is a collection of interconnected devices that share resources and information together. 
+This basic of computer networking, including network types, components, protocols, and essential services like the Domain Name System (DNS).
 
+Q:1. How Does a Computer Network Work?
+Ans. Computer networking devices use a system of rules, called communications protocols, to transmit information over physical or wireless technologies.
+Basic Terminologies of Computer Networks: 
+•	Network: It is a collection of computers and devices that are connected together to enable communication for data exchange.
+•	Nodes: These are devices that are connected to a network. These can include computers, Servers, Printers, Routers, Switches, and other devices.
+•	Protocol: It is a set of rules and standards that manage how data is transmitted over a network. Like. tcp/ip, https and ftp.
+•	Topology: It is physical and logical arrangement of nodes on a network. The common network topologies include bus, star, ring, mesh, and tree.
+•	Service Provider Networks: These types of Networks give permission to take Network Capacity and Functionality on lease from the Provider. Service Provider Networks include Wireless Communications, Data Carriers, etc.
+•	IP Address: It is a unique numerical identifier that is assigned to every device on a network. That is used to identify devices and enable communication between them.
+•	DNS: Domain Name System (DNS) is a protocol that is used to translate human-readable domain names (such as www.google.com) into IP addresses that computers can understand.
+•	Firewall: It is a security device that is used to monitor and control incoming and outgoing network traffic. Firewalls are used to protect networks from unauthorized access and other security threats.
+
+Types of Enterprise Computer Networks:
+•	LAN: Local Area Network (LAN) is a network that covers a small area, such as an office or a home. LANs are typically used to connect computers and other devices within a building or a campus.
+•	WAN: A Wide Area Network (WAN) is a network that covers a large geographic area, such as a city, country, or even the entire world. WANs are used to connect LANs together and are typically used for long-distance communication.
+•	Cloud Networks: Cloud Networks can be visualized with a Wide Area Network (WAN) as they can be hosted on public or private cloud service providers and cloud networks are available if there is a demand. Cloud Networks consist of Virtual Routers, Firewalls, etc.
+
+Types of Computer Network Architecture:
+•	Client-Server Architecture: Client-Server Architecture is a type of Computer Network Architecture in which Nodes can be Servers or Clients. Here, the server node can manage the Client Node Behaviour.
+•	Peer-to-Peer Architecture: In P2P (Peer-to-Peer) Architecture, there is not any concept of a Central Server. Each device is free for working as either client or server.
