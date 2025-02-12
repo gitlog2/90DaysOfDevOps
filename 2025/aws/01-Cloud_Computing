@@ -1,0 +1,20 @@
+Q:3. What is server room?
+Ans. A server room is a space like room where computer servers are kept and managed. It's a centralized location for an organization's network resources and IT infrastructure.
+
+Q:4. What is data center?
+Ans. A data center is a physical facility like building that stores and processes data for businesses. It also allows users to access resources and distribute them. 
+
+Q:5.  What is Availability zones (AZs?
+Ans. An availability zones (AZs) consists of multiple data centers which are isolated or separated data centers located within specific regions in which public cloud services originate and operate. 
+
+Q:6. What is region in cloud computing system?
+Ans. Regions are made up of Availability Zones, which are physically separated and isolated where a cloud service provider has established data centers and infrastructure. 
+Regions are made up of availability zones, which are one or more data centers located.
+
+Q:7. What is public cloud computing system?
+Ans. A public cloud is a computing service that's offered over the internet by service provider on rent model and open to all users and organizations globally. 
+Examples of public clouds: Amazon Web Services (AWS), Gmail, Google Drive, and Hotmail. 
+
+Q: 8. What is Private could computing system?
+Ans. A private cloud is a cloud computing environment that's dedicated to a single organization.
+Examples of private clouds:  IBM, Dell, HPE, and VMware. 
