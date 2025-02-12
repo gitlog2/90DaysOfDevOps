@@ -1,1 +1,117 @@
 
+02-Week: Challenge of DevOps-90-Dsys-Jan2025
+Linux System Administration
+Unix is a commercial operating system. It consists of three parts: Kernel, Shell and Programs. Unix was one of the first operating system (OS) written in the C programming language originally developed in the 1970.
+Linux is an open-source operating system (OS) that is free to use, modify, and redistribute. It was created by Linus Torvalds in 1991 as an alternative to MINIX. Linux is known for its stability, security, and flexibility.
+Linux is a multiuser, multitasking Unix based architectural operating system divided into four layers, Like: kernel, hardware layer, shell, system library, and system utilities.
+
+User cannot directly communicate with the kernel but the kernel can directly communicate with the system hardware.
+1. User: It refers to a person who is interacting with the Unix Operating system. For example, humans.
+2. System Hardware: It Includes all the peripheral devices, such as the input and output, CPU, RAM, and hard disk drive (HDD).
+3. Kernel: It is the core component of the operating system which is written in C programming language. It is loaded into memory when the system is booted.
+It can directly communicate with the hardware and it provides system calls for the user programs to access the resources.
+Kernel manages files, system security, network, I/O devices, memory and processes.
+4. Shell: It acts as an interface (interpreter) between user and the kernel written in C programming language.
+Once the login authentication is success shell is created and its lifetime will be until the login session is completed.
+
+Linux is an open-source Unix like operating system developed by Linus Torvalds when he was a student at the University of Helsinki. Most of the Unix and Linux commands are similar in nature. 
+The open-source means the source code is freely avail globally.  Anyone can use to contribute to modify it as they see fit. 
+Linux is known for its stability, security, and flexibility. it is used in a wide range of applications like smartphones, laptops, servers and supercomputers.
+There are many different distributions of Linux available, each with its own unique features and characteristics. Some popular distributions include Ubuntu, Fedora, Debian, and CentOS.
+
+Most popular hot-keys supported on Linux host
+	alt + f2 Gnome terminal
+	alt + f10 Max
+	alt + f5 Min
+	ctrl + shift+++ increase font
+	ctrl + ------ dicrise font
+	ctrl + shift+n new term
+	ctrl + shift + t new sub term
+	ctrl + pgup / down move curcer on term
+	ctrl + d =(exit) term
+	alt + f4 close all term
+	ctrl + a (home) to move curcer
+	ctrl + e (end) 
+	ctrl + back arrow
+	ctrl + forward arrow
+	ctrl + u delete before curcer
+	ctrl + k delete after curcer
+	up arrow recall command
+	!! just last command
+	! top command
+	!5 from top 5 command
+	!-5 from bottom 5
+
+Meta Character in Linux: Meta characters, also known as wildcards or globing characters, are special characters used in Linux commands to represent patterns of files or directories. 
+	Asterisk (*): # ls *.txt
+	Question mark (?): # ls ???.*
+	Brackets ([ ]): # ls [a,b,c]*
+	The Hyphen (-): # ls [a-z]*
+	Brace expansion ({ }): # mkdir {dir1,dir2,dir3}
+	Tilde (~): cd ~
+	Period (.): # ls .
+	Dollar ($): # echo $myvar
+	Ampersand (&): # mycommand &
+	Pipes (|): # ls | sort
+	Redirection (>): # ls > filelist.txt, Redirects the output (>) and over writes on existing contents.
+	Redirection (>>): # ls > filelist.txt, Redirects the output (>) and appends on existing contents.
+	Redirection (<): # ls > filelist.txt, Redirects the input of a command from existing file contents.
+	Semi column (;): # ls -l; df -h, help of semi column can run one or more commands on same terminal.
+
+1.	Most popular common linux commands 
+	cat <file> 		Print file contents 
+	touch <file> 		Create file (or update timestamp) 
+	cp <src> <dst> 	Copy a file 
+	mv <src> <dst> 	Move / rename a file 
+	rm <file> 		Remove file 
+	head <file> 		Print first 10 lines of file 
+	tail <file> 		Print last 10 lines of file 
+	tail -f <file> 		Print last 10 lines and any new lines added to file
+	ls 			List files in the current directory 
+	ls <dir> 		List files in <dir> 
+	ls -l 			List files with details 
+	ls -a 			List all files (including hidden) 
+	ls -al 			List all files with details 
+	pwd 			Print the current/working directory 
+	cd .. 			Go up one directory 
+	mkdir <dir> 		Create directory 
+	mkdir -p <dir> 	Create directory and any missing parent directories 
+	cp -r <src> <dst> 	Copy a directory and its contents 
+	mv <src> <dst> 	Move / rename a directory 
+	rmdir <dir> 		Remove an empty directory 
+	rm -r <dir> 		Remove a directory and its contents
+
+2.	Most popular searching commands  
+	grep <pattern> <file...> 	Search for pattern in file(s) 
+	grep -r <pattern> <dir> 	Search for pattern recursively in a directory 
+	grep -i <pattern> <file> 	Search for pattern case-insensitively 
+	grep -v <pattern> <file> 	Search for lines not matching pattern 
+	grep -n <pattern> <file> 	Search and print line numbers 
+	find <dir> -name <name>* 	Find files in <dir> with name starting with <name> 
+	find <dir> -type <type> 	Find files in <dir> of type <type>
+
+3.	Most popular file permission commands
+	chown<owner>:<group>	(read/write for owner, read 
+	chmod <mode> <file> 	Change file permissions 
+	chmod u+x <file> 		Add execute permission for the owner 
+	chmod -R g+w <dir> 	Add write permission for the group recursively to a directory 
+	chown <owner> <file> 	Change file owner 
+	chown -R <owner> <dir> 	Change directory owner recursively 
+	chgrp <group> <file> 	Change file group 
+
+	4 Read (r) 
+	2 Write (w) 
+	1 Execute (x)  
+	u Owner 
+	g Group 
+	a All
+
+4.	Most popular secure shell (SSH) commands
+	ssh-keygen 		Generate SSH key pair 
+	ssh-add <key> 	Add SSH key to SSH agent 
+	ssh-add -l 		List SSH keys in SSH agent 
+	ssh-copy-id <user>@<host> 	Copy SSH key to <host> for <user> 
+	ssh <user>@<host> 		Connect to <host> as <user> 
+	scp <src> <host>:<dest> 	Copy local file <src> to <dest> on <host> 
+	scp <host>:<src> <dest> 	Copy file <src> from <host> to local <dest>
+
