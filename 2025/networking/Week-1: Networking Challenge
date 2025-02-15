@@ -1,0 +1,207 @@
+Week 1: Networking Challenge
+1. Understood OSI & TCP/IP Models
+
+•	Learn about the OSI and TCP/IP models, including their layers and purposes.
+Ans.: In the OSI model (Open Systems Interconnection), which is a 7-layered framework for designing and implementing computer networks
+
+•	Task: Write examples of how each layer applies to real-world scenarios (e.g., HTTP at the Application Layer, TCP at the Transport Layer).
+Ans: HTTP (Hypertext Transfer Protocol) operates on application layer (layer 7), HTTP is responsible for defining the format of messages exchanged between web servers and clients. 
+TCP (Transmission Control Protocol) operates on Transport Layer (Layer 4), TCP is responsible for providing reliable, error-checked, and sequential delivery of data between devices.
+
+2. Protocols and Ports for DevOps
+•	Study the most commonly used protocols (e.g., HTTP, HTTPS, FTP, SSH, DNS) and their port numbers.
+Ans.: HTTP (Hypertext Transfer Protocol) is a protocol that operates at the Application Layer (Layer 7) of the OSI model. Request/Response Model: HTTP uses a request/response model, where a client (web browser) sends a request to a server, and the server responds with the requested data. The standard (default) port number 80 used for communication. 
+HTTPS (Hypertext Transfer Protocol Secure) is an extension of the HTTP protocol that adds an extra layer of security by using encryption to protect data in transit. The standard (default) port number 443 used for communication. 
+FTP (File Transfer Protocol) is a standard network protocol used for transferring files between a local computer and a remote server over the Internet. The standard (default) port number 21 used for communication and 20 port number for data transfer. 
+SSH (Secure Shell): it is a secure network protocol used for remote access to a computer or network. It allows users to securely access, manage, and transfer data between systems over an encrypted connection. The standard (default) port number 22 used for communication. 
+DNS (Domain Name System): it translates human-readable domain names into machine-readable IP addresses. Which is a critical component of the internet infrastructure. The standard (default) port number 53 used for communication. 
+
+•	Task: Create a blog, article, GitHub page, or README listing these protocols and explaining their relevance to DevOps workflows.
+3. AWS EC2 and Security Groups
+
+•	Launch an AWS EC2 instance (free tier is fine).
+Ans.: For creating an ec2 instance we must access the AWS console which is also called AWS Management Console that is collection of various services that make up the AWS cloud. There are 2 option (GUI from aws portal and CLI (Command Line Interface) available to create aws instance.
+Go on AWS portal to access the AWS Console: https://eu-north-1.signin.aws.amazon.com/
+Put the account ID, IAM user name and password on IAM user sign in windows.
+Type ce2 on global search and select instances these an option to create ec2 instance “Launch instances”
+ The Launch an instance provides multiple fields to fill in order to create an ec2 instances.
+1.	Name and tags (put here the ec2 instance name and tag name).
+2.	Choose Application and OS Images (Amazon Machine Image) like Ubuntu or Architecture.
+3.	Instance Type like t2.micro, and create the Key pair ( for access login)
+4.	Select Network settings defaults (Subnet, auto assign public IP, firewall “SG” under VPC”
+5.	Allow SSH Traffic from Anywhere (0.0.0.0/0
+6.	Configure storage (1x 8 GB gp3) and then click on Launch instance.
+7.	After health check 3/3 completed, it would be accessible using public IP from own system.
+
+•	Learn about Security Groups, their rules, and their significance in securing cloud instances.
+Ans.: Security Group (SG) is a virtual firewall that controls incoming and outgoing traffic to and from an instance or a set of instances in cloud computing system. Security Groups act as a barrier in between the internet and our instances. It is protected of the instances from unauthorized access and block incoming traffic from unknown sources.
+
+•	Task: Write a step-by-step guide or blog on how to create and configure Security Groups.
+Ans.: There are following steps to creating a Security Group in AWS.
+1.	Log in to the AWS Management Console and Navigate to the VPC dashboard.
+2.	Click on "Security Groups" in the left-hand menu and click on "Create security group".
+3.	Enter a name and description for the Security Group.
+4.	Choose the VPC to create the Security Group.
+5.	Configure the inbound and outbound rules as needed.
+6.	Click "Create security group".
+4. Hands-On with Networking Commands
+
+•	Practice essential networking commands like:
+o	ping (check connectivity)
+Ans.: [student@node1 ~] $ ping node2
+          PING node2 (192.168.232.137) 56(84) bytes of data.
+          64 bytes from node2 (192.168.232.137): icmp_seq=1 ttl=64 time=1.01 ms
+          64 bytes from node2 (192.168.232.137): icmp_seq=2 ttl=64 time=1.33 ms
+          64 bytes from node2 (192.168.232.137): icmp_seq=3 ttl=64 time=1.39 ms
+ student@node1 ~] $ ping -c 10 8.8.8.8 | tail -n 5
+
+o	traceroute / tracert (trace packet routes)
+Ans.: [student@node1 ~] $ traceroute node2
+          traceroute to node2 (192.168.232.137), 30 hops max, 60 byte packets
+          node2 (192.168.232.137)  0.872 ms !X  0.650 ms !X  0.547 ms !X
+
+o	netstat (network statistics)
+Ans.: [student@node1 ~] $ netstat -al
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         	State
+tcp        0         0 	       localhost:ipp           0.0.0.0:*               		LISTEN
+tcp        0         0 	       0.0.0.0:ssh               0.0.0.0:*               		LISTEN
+tcp        0         0            node1:ssh               192.168.232.1:52089     	ESTABLISHED
+tcp        0         0            node1:ssh               192.168.232.1:52638     	ESTABLISHED
+
+o	curl (make HTTP requests)
+ Ans.: [student@node1 ~]$ curl https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>302 Found</title>
+</head><body>
+<h1>Found</h1>
+<p>The document has moved <a href="https://the.earth.li/~sgtatham/putty/0.83/w64/putty.exe">here</a>.</p>
+<hr>
+<address>Apache Server at the.earth.li Port 443</address>
+</body></html>
+
+o	dig / nslookup (DNS lookup)
+Ans.: [student@node1 ~]$ dig node2
+; <<>> DiG 9.16.23-RH <<>> node2
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 61001
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; MBZ: 0x0005, udp: 4096
+;; QUESTION SECTION:
+;node2.                         IN      A
+
+;; AUTHORITY SECTION:
+.                       5       IN      SOA     a.root-servers.net. nstld.verisign-grs.com. 2025021500 1800 900 604800 86400
+
+;; Query time: 653 msec
+;; SERVER: 192.168.232.2#53(192.168.232.2)
+;; WHEN: Sat Feb 15 16:59:28 IST 2025
+;; MSG SIZE  rcvd: 109
+
+•	Task: Create a cheat sheet or short guide explaining the purpose and usage of each command.
+Ans.: The Linux command line is a powerful tool that gives you flexibility and control on system.  
+o	Accessing command-line help documentation: 
+o	Descriptions: man - Access manual pages for all Linux commands or system's manual pager
+o	Syntex: man [man options] [[section] page ...] ...
+o	Example: $ man ls
+
+o	Working with files and directories:
+o	Descriptions: ls - list directory contents
+o	Syntex: ls [options] [section] 
+o	Example: $ ls -al
+
+o	Descriptions: file - determine file type
+o	Syntex: file [OPTION]... [--EXTENTION] SEPERATOR… FILENAME…
+o	Example: $ file /dir1/file1.txt
+
+o	Descriptions: touch - Determine file type
+o	Syntex: touch [OPTION]... [PATH FILENAME] …
+o	Example: $ touch /dir1/file1.txt /file2.txt
+
+o	Descriptions: vi, vim, nano – Improved, a programmer's text editor
+o	Syntex: touch [OPTION]... [FILENAME]…tag
+o	Example: $ nano/vi/vim file_name
+o	Descriptions: cat - concatenate files and print on the standard output
+o	Syntex: cat [OPTION]... FILE
+o	Example: $ file /dir1/file1.txt
+o	Example: $ file /dir1/file1.txt /dir1/file2.txt > /dir1/file3.txt
+
+o	Descriptions: mkdir - Create directories
+o	Syntex: mkdir [OPTION]... DIRECTORY
+o	Example: $ mkdir -p /dir1/dir2
+
+o	Descriptions: cd - Change to another directory.
+o	Syntex: cd [destination]
+o	Example: $ cd /
+
+o	Descriptions: cp - Copy the contents of the source directory or file to a target directory or file.
+o	Syntex: cp [option] [source] [target]
+o	Example: $ cp -ir /src /target
+
+o	Descriptions: find - Locate a file or directory.
+o	Syntex: find [PATH] [OPTION] EXPRESSION
+o	Example: $ find /path -type f -name "file"
+
+o	Descriptions: locate - find files by name
+o	Syntex: locate [options] [keyword]
+o	Example: $ ls | grep "file.txt"
+
+o	Descriptions: tail - list output from last part of files
+o	Syntex: tail [OPTION]... [FILE]...
+o	Example: $ tail -n file.txt
+
+o	Descriptions: head - list output from top part of files
+o	Syntex: head [OPTION]... [FILE]...
+o	Example: $ head -n file.txt
+
+o	Descriptions: mkdir - Create directories
+o	Syntex: mkdir [OPTION]... DIRECTORY
+o	Example: $ mkdir -p /dir1/dir2
+
+o	Descriptions: more - file perusal filter for crt/page viewing
+o	Syntex: more [OPTION]... [FILE]...
+o	Example: $ more file
+
+o	Descriptions: mv - move (rename) files /directory
+o	Syntex: mv [OPTION]... SOURCE... DIRECTORY
+o	Example: $ mv file1 file2
+o	Example: $ mv old-file new-file
+
+o	Descriptions: pwd - print name of current/working directory
+o	Syntex: pwd [OPTION]...
+o	Example: $ pwd
+
+o	Descriptions: rm - Delete files or directories.
+o	Syntex: rm [OPTION]... [FILE]...
+o	Example: $ rm -r file / directory
+
+o	Descriptions: tar - Extract and compress files.
+o	Syntex: tar [OPTION] MULTIPLE FILE
+o	Example: $ tar -cvf files.tar file1 file2 file3 file4
+o	Example: $ tar -tvf files.tar 
+o	Example: $ tar -xvf files.tar 
+
+o	Descriptions: grep - Search for a string within an output.
+o	Syntex: grep [OPTION] keyword [file]
+o	Example: $ ls | grep "file.txt"
+
+o	Descriptions: sed - stream editor for filtering and transforming text
+o	Syntex: sed [OPTION] 'subcommand/' input_file
+o	Example: $ sed 's/red/blue' file1.txt file2.txt
+o	Descriptions: awk - pattern scanning and processing language
+o	Syntex: grep [OPTION] keyword [file]
+o	Example: $ awk '/regex pattern/{action}' input_file.txt
+
+o	Descriptions: cut - remove sections from each line of files
+o	Syntex: cut OPTION... [FILE]...
+o	Example: $ cut -d',' -f3-5 list.txt
+o	Descriptions: tee - read from standard input and write to standard output and files
+o	Syntex: tee [OPTION]... [FILE]...
+o	Example: $ ping 8.8.8.8 | tee -a log.txt
+o	Descriptions: diff - compare files line by line
+o	Syntex: diff [OPTION]... FILES
+o	Example: $ diff -c file1.txt file2.txt
